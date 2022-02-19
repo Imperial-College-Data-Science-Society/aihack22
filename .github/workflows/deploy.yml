@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-    - master
+    - gh-pages
   schedule:
     # Run every January 1st, so that footer (c) date is always up-to-date
     - cron:  '24 5 1 1 *'
