@@ -1,0 +1,19 @@
+- title: 1st
+  sub: Batch
+  items:
+  - title: Applications Open
+    date: Fri, 15 Jan 16:00
+  - title: Applications Close
+    date: Fri, 22 Jan 23:59
+  - title: Participants Announced
+    date: Fri, 29 Jan
+
+- title: 2nd
+  sub: Batch
+  items:
+  - title: Applications Open
+    date: Wed, 27 Jan 16:00
+  - title: Applications Reviewed
+    date: Rolling Basis
+  - title: Participants Announced
+    date: Rolling Basis

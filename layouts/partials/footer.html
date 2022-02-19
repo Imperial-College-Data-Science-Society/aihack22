@@ -1,0 +1,13 @@
+<footer class="footer">&copy; ICDSS {{ now.Year }} - by browsing this website you agree to our use of cookies 🍪</footer>
+
+<!-- Scripts -->
+{{ $js := resources.Get "main.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136237548-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'UA-136237548-2');
+</script>

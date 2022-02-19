@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+  <!-- Navigation -->
+  <nav id="nav-header" class="nav nav-transparent">
+    <div class="nav-content">
+      <img class="logo" src="/img/logo.svg">
+      <span class="nav-group optional">
+        <a class="nav-item" href="/">Home</a>
+        <a class="nav-item" href="#sec-schedule">Schedule</a>
+        {{ if .Site.Data.toggles.challenges }}<a class="nav-item" href="#sec-challenges">Challenges</a>{{ end }}
+        <a class="nav-item" href="#sec-emergency">Emergency</a>
+        <a class="nav-item" href="#sec-code">Code of Conduct</a>
+      </span>
+    </div>
+  </nav>
+
+  <!-- Hero (logo and sign up) -->
+  <div class="hero">
+    <img class="logo" src="/img/hero.svg">
+    <div class="call-to-action">
+      <h1 class="title">Your Guide to AIHack</h1>
+      <a href="{{ .Site.Data.guide.slack }}" class="button">Join Slack</a>
+      <a href="{{ .Site.Data.guide.devpost }}" class="button subtle">Visit DevPost</a>
+      <a href="{{ .Site.Data.guide.facebook }}" class="button subtle" style="margin-top: 0">Get Updates on Facebook</a>
+    </div>
+  </div>
+
+  <!-- Schedule -->
+  <div id="sec-schedule" class="section">
+    <h1>Schedule</h1>
+    <div class="schedule">
+      {{ range .Site.Data.schedule }}
+        <ul class="day" data-day="{{ .day }}" data-date="{{ .date }}">
+          {{ range .items }}
+            <li data-time="{{ .time }} - {{ .location }}" style="max-width: 300px">{{ .title }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Challenges -->
+  {{ if .Site.Data.toggles.challenges }}
+    <div id="sec-challenges" class="section">
+      <h1>Challenges</h1>
+      <ul class="events">
+        {{ range .Site.Data.challenges }}
+          <li class="event">
+            <h2>{{ .title }}</h2>
+            <h3>From {{ .company }}</h3>
+            <a class="button" href="{{ .url }}">Start Challenge</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+
+  <div id="sec-emergency" class="section">
+    <h1>Emergency Contacts</h1>
+    <ul class="events">
+      {{  range .Site.Data.guide.emergency }}
+        <li class="event">
+          <h2>{{ .name }}</h2>
+          <h3>{{ .phone }}</h3>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <!-- Code of Conduct -->
+  <div id="sec-code" class="section">
+    <h1>Code of Conduct</h1>
+    <p>Harassment includes offensive verbal comments related to gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, nationality, religion or political views, sexual images in public spaces, deliberate intimidation, stalking, following, photography or audio/video recording against reasonable consent, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention.</p>
+    <p>Photography is encouraged, but other participants must be given a reasonable chance to opt out from being photographed. If they object to the taking of their photograph, comply with their request. It is inappropriate to take photographs in contexts where people have a reasonable expectation of privacy (in bathrooms or where participants are sleeping).</p>
+    <p>Participants asked to stop any harassing behavior are expected to comply immediately.</p>
+    <p>As this is a hackathon, we like to explicitly note that the hacks created at our hackathon are equally subject to the anti-harassment policy.</p>
+    <p>Sponsors and partners are also subject to the anti-harassment policy. In particular, sponsors should not use sexualised images, activities, or other material. Sponsor representatives (including volunteers) should not use sexualised clothing/uniforms/costumes, or otherwise create a sexualised environment.</p>
+    <p>If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of hackathon staff immediately.</p>
+    <p>Hackathon staff will be happy to help participants contact any local security or local law enforcement, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the hackathon. We value your attendance.</p>
+    <p>If a participant engages in harassing behavior, the hackathon organisers may take any action they deem appropriate. This includes warning the offender, expulsion from the hackathon with no refund (if applicable), or reporting their behaviour to local law enforcement.</p>
+    <p>We expect participants to follow these rules at hackathon and workshop venues and hackathon-related social events.</p>
+    <p><a href="https://hackcodeofconduct.org/">https://hackcodeofconduct.org/</a></p>
+  </div>
+
+{{ end }}

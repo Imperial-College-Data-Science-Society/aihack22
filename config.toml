@@ -1,0 +1,7 @@
+baseURL = "https://imperial-college-data-science-society.github.io/aihack22/"
+languageCode = "en-us"
+title = "AIHACK 2021"
+enableRobotsTXT = true
+
+[permalinks]
+  pages = "/:title/"

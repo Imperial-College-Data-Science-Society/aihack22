@@ -1,0 +1,9 @@
+slack: "https://join.slack.com/t/aihack20/shared_invite/enQtOTIxODI0MTM4MjkwLTFhNTM1ODk5YzlkOTczMGM0N2Y1YmFlMzBiZWJlYzQ5OWZlMWQxNWRjYTA4ODAzZThlZGQ4NGViMDM0NTMzNjM"
+facebook: "https://www.facebook.com/events/s/ai-hack-2020/755111851650782/"
+devpost: "https://ai-hack-2020.devpost.com/"
+
+emergency:
+  - name: "Imperial College Security"
+    phone: "020 7589 1000 (landline 4444)"
+  - name: "Non Urgent Help"
+    phone: "Please contact us on Slack"

@@ -1,0 +1,10 @@
+<!-- render a list of judges -->
+<div class="profiles">
+  {{ range . }}
+    <div class="card big-info">
+      <img src="img/people/{{ if .pic }}{{ .pic }}.jpeg{{ else }}placeholder.png{{ end }}">
+      <span class="name">{{ .name }}</span>
+      <span class="info">{{ .info }}</span>
+    </div>
+  {{ end }}
+</div>

@@ -1,0 +1,12 @@
+<!-- render a list of people -->
+<div class="profiles">
+  {{ range . }}
+    <div class="card">
+      <img src="img/people/{{ if .pic }}{{ .pic }}.jpeg{{ else }}placeholder.png{{ end }}">
+      <span class="name">{{ .name }}</span>
+      <span class="info">
+        {{ .info }} <br> <a href="https://www.linkedin.com/in/{{ .linkedin }}/">LinkedIn</a>
+      </span>
+    </div>
+  {{ end }}
+</div>
